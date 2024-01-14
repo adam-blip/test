@@ -3,7 +3,7 @@ activate crostini linux enironment under developer settings, open terminal:
 
 ```
 sudo apt update
-sudo apt install git python3-pip cmake libgl-dev libglu-dev libegl-dev libgles-dev -y
+sudo apt install wget git python3-pip cmake libgl-dev libglu-dev libegl-dev libgles-dev libdrm-dev libgbm-dev -y
 ```
 
 ```
@@ -14,7 +14,7 @@ mkdir -p build && cd build
 ```
 
 ```
-sudo cmake -DUSE_EGL=ON -DGLES_VERSION=20 ..
+sudo cmake -DUSE_EGL_DRM=ON -DGLES_VERSION=20 ..
 sudo make X2 -j4
 ```
 
@@ -28,4 +28,7 @@ sudo python3 -c "import beatmup; beatmup.say_hi()"
 
 ```
 sudo pip3 install opencv-python --break-system-packages
+cd examples
+wget https://github.com/adam-blip/test/raw/master/star.bmp
+sudo python3 x2_superresolution.py star.bmp
 ```
