@@ -22,6 +22,6 @@ sudo make X2 -j4
 sudo make beatmup -j4
 cd ../python
 sudo python3 setup.py bdist_wheel clean
-sudo python3 -m pip install --no-index --find-links=dist beatmup
+sudo python3 -m pip install --no-index --find-links=dist beatmup --break-system-packages
 sudo python3 -c "import beatmup; beatmup.say_hi()"
 ```
