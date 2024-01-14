@@ -17,3 +17,11 @@ mkdir -p build && cd build
 sudo cmake -DUSE_EGL=ON -DGLES_VERSION=20 ..
 sudo make X2 -j4
 ```
+
+```
+sudo make beatmup
+cd ../python
+sudo python3 setup.py bdist_wheel clean
+sudo python3 -m pip install --no-index --find-links=dist beatmup
+sudo python3 -c "import beatmup; beatmup.say_hi()"
+```
